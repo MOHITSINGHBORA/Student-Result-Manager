@@ -22,25 +22,31 @@
         <form id="studentForm">
             <input type="number" id="roll" placeholder="Roll No" required>
             <input type="text" id="name" placeholder="Student Name" required>
-            <input type="number" id="marks" placeholder="Marks (0-100)" required>
+            <input type="number" id="marks" placeholder="Marks (0-500)" required>
             <button type="submit" id="submitBtn"><i class="fa-solid fa-plus"></i></button>
         </form>
 
         <p id="message"></p>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Roll No</th>
-                    <th>Name</th>
-                    <th>Marks</th>
-                    <th>Grade</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody id="studentTable">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                        <th>Marks</th>
+                        <th>Grade</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTable">
 
-            </tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <table>
+
         </table>
     </div>
 

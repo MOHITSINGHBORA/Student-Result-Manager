@@ -9,7 +9,6 @@ const submitBtn = document.getElementById("submitBtn");
 let students = new Map();
 let editingRoll = null;
 
-
 function loadData() {
     const savedData = JSON.parse(localStorage.getItem("students"));
     if (savedData) {
@@ -18,43 +17,40 @@ function loadData() {
     }
 }
 
-
 function saveData() {
     localStorage.setItem("students", JSON.stringify([...students]));
 }
 
-
 function calculateGrade(marks) {
-    if (marks >= 90) return "A";
-    if (marks >= 75) return "B";
-    if (marks >= 60) return "C";
-    if (marks >= 40) return "D";
+    if (marks >= 450) return "A";
+    if (marks >= 400) return "B";
+    if (marks >= 350) return "C";
+    if (marks >= 300) return "D";
     return "Fail";
 }
-
 
 function renderTable() {
     tableBody.innerHTML = "";
 
     students.forEach((value, key) => {
+       
         const row = `
             <tr>
-                <td>${key}</td>
-                <td>${value.name}</td>
-                <td>${value.marks}</td>
-                <td>${value.grade}</td>
-              <td>
-    <div class="action-buttons">
-        <i class="fa-solid fa-pencil edit" onclick="editStudent('${key}')" title="Edit"></i>
-        <i class="fa-solid fa-trash delete" onclick="deleteStudent('${key}')" title="Delete"></i>
-    </div>
-</td>
+                <td data-label="Roll No">${key}</td>
+                <td data-label="Name">${value.name}</td>
+                <td data-label="Marks">${value.marks}</td>
+                <td data-label="Grade">${value.grade}</td>
+                <td data-label="Action">
+                    <div class="action-buttons">
+                        <i class="fa-solid fa-pencil edit" onclick="editStudent('${key}')" title="Edit"></i>
+                        <i class="fa-solid fa-trash delete" onclick="deleteStudent('${key}')" title="Delete"></i>
+                    </div>
+                </td>
             </tr>
         `;
         tableBody.innerHTML += row;
     });
 }
-
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -81,14 +77,14 @@ form.addEventListener("submit", function (e) {
         message.textContent = "Student updated successfully!";
         message.style.color = "green";
 
-        submitBtn.textContent = "Add";
+        submitBtn.innerHTML = '<i class="fa-solid fa-plus"></i>'; 
         rollInput.disabled = false;
         editingRoll = null;
     } else {
         const roll = rollInput.value.trim();
 
         if (!roll) {
-            message.textContent = "Roll number is  required!";
+            message.textContent = "Roll number is required!";
             message.style.color = "red";
             return;
         }
@@ -121,7 +117,7 @@ function editStudent(roll) {
 
     rollInput.disabled = true;
 
-    submitBtn.textContent = "Update";
+    submitBtn.innerHTML = '<i class="fa-solid fa-check"></i>';  
     editingRoll = roll;
 
     message.textContent = `Editing student with Roll No: ${roll}`;
@@ -142,10 +138,9 @@ function deleteStudent(roll) {
 function cancelEdit() {
     editingRoll = null;
     form.reset();
-    submitBtn.textContent = "Add";
+    submitBtn.innerHTML = '<i class="fa-solid fa-plus"></i>';
     rollInput.disabled = false;
     message.textContent = "";
 }
-
 
 loadData();
