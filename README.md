@@ -106,6 +106,12 @@ No installation required.
 
 ---
 
+## check live
+
+https://mohitsinghbora.github.io/Student-Result-Manager/
+
+---
+
 ## License
 
 This project is free to use for learning purposes.
