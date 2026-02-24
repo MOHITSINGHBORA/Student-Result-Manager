@@ -43,10 +43,12 @@ function renderTable() {
                 <td>${value.name}</td>
                 <td>${value.marks}</td>
                 <td>${value.grade}</td>
-                <td>
-                    <i class="fa-solid fa-pencil edit" onclick="editStudent('${key}')" title="Edit"></i>
-                    <i class="fa-solid fa-trash delete" onclick="deleteStudent('${key}')" title="Delete"></i>
-                </td>
+              <td>
+    <div class="action-buttons">
+        <i class="fa-solid fa-pencil edit" onclick="editStudent('${key}')" title="Edit"></i>
+        <i class="fa-solid fa-trash delete" onclick="deleteStudent('${key}')" title="Delete"></i>
+    </div>
+</td>
             </tr>
         `;
         tableBody.innerHTML += row;
@@ -108,7 +110,7 @@ form.addEventListener("submit", function (e) {
 
     setTimeout(() => message.textContent = "", 2000);
 });
- 
+
 function editStudent(roll) {
     const student = students.get(roll);
     if (!student) return;

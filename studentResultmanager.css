@@ -76,6 +76,13 @@ table {
     border-collapse: collapse;
 }
 
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
 th,
 td {
     padding: 10px;
