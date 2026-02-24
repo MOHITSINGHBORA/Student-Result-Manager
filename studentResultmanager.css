@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Ubuntu", sans-serif;
+    background: rgb(50, 49, 49);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: rgb(214, 214, 214);
+}
+
+.container {
+
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(190, 178, 178, 0.2);
+    border: 2px solid rgb(214, 214, 214);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+
+}
+
+form input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: none;
+    outline: none;
+}
+
+form input:focus {
+    box-shadow: 1px 1px 5px 1px rgb(214, 214, 214);
+}
+
+
+form button {
+    padding: 10px 15px;
+    cursor: pointer;
+    color: rgb(66, 63, 63);
+    border: none;
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 7px;
+}
+
+form button:hover {
+    background: rgb(66, 63, 63);
+    color: rgb(214, 214, 214);
+}
+
+#message {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: red;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    border-bottom: 1px solid rgb(214, 214, 214);
+    text-align: center;
+}
+
+.delete {
+    color: rgb(214, 214, 214);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete:hover {
+    color: rgb(220, 4, 4);
+}
+
+.edit {
+    color: rgb(214, 214, 214);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.edit:hover{
+    color: rgb(14, 205, 58);
+}
+
+@media (max-width: 600px) {
+    form {
+        flex-direction: column;
+    }
+}
